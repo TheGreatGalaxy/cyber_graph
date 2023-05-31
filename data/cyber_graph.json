@@ -1,0 +1,117 @@
+{
+  "nodes": [
+    {
+      "node_name": "lidar_1_driver",
+      "host_name": "in-dev-docker",
+      "host_ip": "192.168.1.20",
+      "process_id": 28272,
+      "readers": [],
+      "writers": [
+        "/drivers/device_1_lidar_scan",
+        "/hm/node/alive/Node_LidarD"
+      ]
+    },
+    {
+      "node_name": "lidar_1_parser",
+      "host_name": "in-dev-docker",
+      "host_ip": "192.168.1.20",
+      "process_id": 28279,
+      "readers": [
+        "/drivers/device_1_lidar_scan",
+        "/hm/node/alive/Node_Param"
+      ],
+      "writers": [
+        "/drivers/device_1_lidar_pointcloud",
+        "/hm/node/alive/Node_LidarP"
+      ]
+    },
+    {
+      "node_name": "lidar_2_driver",
+      "host_name": "in-dev-docker",
+      "host_ip": "192.168.1.20",
+      "process_id": 28272,
+      "readers": [],
+      "writers": [
+        "/drivers/device_2_lidar_scan"
+      ]
+    },
+    {
+      "node_name": "lidar_2_parser",
+      "host_name": "in-dev-docker",
+      "host_ip": "192.168.1.20",
+      "process_id": 28279,
+      "readers": [
+        "/drivers/device_2_lidar_scan"
+      ],
+      "writers": [
+        "/drivers/device_2_lidar_pointcloud"
+      ]
+    },
+    {
+      "node_name": "lidar_3_driver",
+      "host_name": "in-dev-docker",
+      "host_ip": "192.168.1.20",
+      "process_id": 28272,
+      "readers": [],
+      "writers": [
+        "/drivers/device_3_lidar_scan"
+      ]
+    },
+    {
+      "node_name": "lidar_3_parser",
+      "host_name": "in-dev-docker",
+      "host_ip": "192.168.1.20",
+      "process_id": 28279,
+      "readers": [
+        "/drivers/device_3_lidar_scan"
+      ],
+      "writers": [
+        "/drivers/device_3_lidar_pointcloud"
+      ]
+    }
+  ],
+  "edges": {
+    "/drivers/device_1_lidar_scan": {
+      "node": "lidar_1_driver",
+      "channel": "/drivers/device_1_lidar_scan",
+      "bw": "1.13MB/s",
+      "Hz": "10.61Hz",
+      "count": 10
+    },
+    "/drivers/device_1_lidar_pointcloud": {
+      "node": "lidar_1_parser",
+      "channel": "/drivers/device_1_lidar_pointcloud",
+      "bw": "2.62MB/s",
+      "Hz": "10.64Hz",
+      "count": 10
+    },
+    "/drivers/device_2_lidar_scan": {
+      "node": "lidar_2_driver",
+      "channel": "/drivers/device_2_lidar_scan",
+      "bw": "1.15MB/s",
+      "Hz": "10.86Hz",
+      "count": 10
+    },
+    "/drivers/device_2_lidar_pointcloud": {
+      "node": "lidar_2_parser",
+      "channel": "/drivers/device_2_lidar_pointcloud",
+      "bw": "3.02MB/s",
+      "Hz": "10.88Hz",
+      "count": 10
+    },
+    "/drivers/device_3_lidar_scan": {
+      "node": "lidar_3_driver",
+      "channel": "/drivers/device_3_lidar_scan",
+      "bw": "2.85MB/s",
+      "Hz": "10.86Hz",
+      "count": 10
+    },
+    "/drivers/device_3_lidar_pointcloud": {
+      "node": "lidar_3_parser",
+      "channel": "/drivers/device_3_lidar_pointcloud",
+      "bw": "9.71MB/s",
+      "Hz": "9.98Hz",
+      "count": 10
+    }
+  }
+}
